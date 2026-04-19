@@ -1023,6 +1023,9 @@ internal static unsafe partial class ObjC
     private static partial nint objc_msgSend_nint_nint(nint receiver, nint selector, nint a0);
 
     [LibraryImport("/usr/lib/libobjc.A.dylib", EntryPoint = "objc_msgSend")]
+    private static partial nint objc_msgSend_nint_nint_nint_nint(nint receiver, nint selector, nint a0, nint a1, nint a2);
+
+    [LibraryImport("/usr/lib/libobjc.A.dylib", EntryPoint = "objc_msgSend")]
     private static partial nint objc_msgSend_nint_ulong(nint receiver, nint selector, ulong a0);
 
     [LibraryImport("/usr/lib/libobjc.A.dylib", EntryPoint = "objc_msgSend")]
@@ -1227,6 +1230,11 @@ internal static unsafe partial class ObjC
     public static nint MsgSend_nint_nint(nint receiver, nint selector, nint a0)
     {
         return objc_msgSend_nint_nint(receiver, selector, a0);
+    }
+
+    public static nint MsgSend_nint_nint_nint_nint(nint receiver, nint selector, nint a0, nint a1, nint a2)
+    {
+        return objc_msgSend_nint_nint_nint_nint(receiver, selector, a0, a1, a2);
     }
 
     public static nint MsgSend_nint_ulong(nint receiver, nint selector, ulong a0)
